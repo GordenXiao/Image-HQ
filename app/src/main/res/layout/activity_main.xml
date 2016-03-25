@@ -4,24 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gorden.widget.image.MainActivity">
-
-    <!--<ScrollView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!-->-->
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="vertical"-->
-            <!-->-->
-            <!--<gorden.widget.image.HDImageView-->
-                <!--android:id="@+id/hd"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="200dp" />-->
-        <!--</LinearLayout>-->
-    <!--</ScrollView>-->
-    <gorden.widget.image.HDImageView
-        android:id="@+id/hd"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="60dp"
+        android:background="#b1e2b5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/select_Pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="选择照片"
+            />
+        <Button
+            android:id="@+id/open_gesture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="打开手势控制"
+            />
+        <Button
+            android:id="@+id/open_hdBrower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="打开高清预览"
+            />
+    </LinearLayout>
+    <gorden.widget.image.ImageView
+        android:id="@+id/hd"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>

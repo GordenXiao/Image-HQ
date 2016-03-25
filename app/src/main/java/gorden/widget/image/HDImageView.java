@@ -11,7 +11,6 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
 import java.io.InputStream;
@@ -249,7 +248,7 @@ public class HDImageView extends View implements HDManager.OnImageLoadListenner{
         imageRect.right = (int) Math.ceil((visiableRect.right + mScale.fromX) * imageScale);
         imageRect.bottom = (int) Math.ceil((visiableRect.bottom + mScale.fromY) * imageScale);
         startTime = SystemClock.uptimeMillis();
-//        Log.e(TAG,imageRect.left+" : "+imageRect.top+" : "+imageRect.right+" : "+imageRect.bottom+"     width:"+visiableRect.width());
+        Log.e(TAG,imageRect.left+" : "+imageRect.top+" : "+imageRect.right+" : "+imageRect.bottom+"     width:"+visiableRect.width());
         List<HDManager.DrawData> drawData = imageManager.getDrawData(imageScale, imageRect);
 
         startTime = SystemClock.uptimeMillis();
@@ -260,7 +259,7 @@ public class HDImageView extends View implements HDManager.OnImageLoadListenner{
             drawRect.top = (int) (drawRect.top / imageScale - mScale.fromY);
             drawRect.right = (int) (Math.ceil(drawRect.right / imageScale) - mScale.fromX);
             drawRect.bottom = (int) (Math.ceil(drawRect.bottom / imageScale) - mScale.fromY);
-//            Log.e(TAG,currentRect.left+" : "+currentRect.top+" : "+data.imageRect.right+" : "+data.imageRect.bottom);
+//            Log.e(TAG,drawRect.left+" : "+drawRect.top+" : "+drawRect.right+" : "+drawRect.bottom);
             canvas.drawBitmap(data.bitmap, data.srcRect, drawRect, null);
         }
         canvas.restoreToCount(saveCount);
